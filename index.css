@@ -1,0 +1,28 @@
+/* Add these 3 lines at the very top to fix the Syntax Error */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Set global Midnight Gold gradient */
+    @apply bg-gradient-to-br from-[#1A1A1A] via-[#2d2d2d] to-[#B3945B] min-h-screen text-white antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Dark Glassmorphism for the Midnight theme */
+  .glass {
+    @apply bg-black/60 backdrop-blur-md border border-white/10 shadow-2xl;
+  }
+
+  .animate-page-fade {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
